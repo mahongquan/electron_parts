@@ -14,6 +14,7 @@ export default class Home extends Component<Props> {
         <div className={styles.container} data-tid="container">
           <h2>Home</h2>
           <div><Link to="/counter">to Counter</Link></div>
+          <div><Link to="/db">to Db</Link></div>
         </div>
       </div>
     );
