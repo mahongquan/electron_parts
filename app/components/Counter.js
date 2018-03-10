@@ -1,6 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import styles0 from './Home.css';
 import styles from './Counter.css';
 
 type Props = {
@@ -19,7 +20,7 @@ export default class Counter extends Component<Props> {
       increment, incrementIfOdd, incrementAsync, decrement, counter
     } = this.props;
     return (
-      <div>
+      <div  className={styles0.container}>
         <div className={styles.backButton} data-tid="backButton">
           <Link to="/">
             <i className="fa fa-arrow-left fa-3x" />

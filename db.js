@@ -32,7 +32,7 @@ var socket={
         data.start=0
     if (url=="/folder"){
         console.log(data);
-        const modalPath = path.join(__dirname, '/media/仪器资料/'+data.yiqibh);
+        const modalPath = path.join(__dirname, '../media/仪器资料/'+data.yiqibh);
           // Open a local file in the default app
         console.log(modalPath);
         console.log(shell);
