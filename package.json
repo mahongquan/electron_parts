@@ -139,8 +139,8 @@
     "cross-spawn": "^6.0.4",
     "css-loader": "^0.28.9",
     "detect-port": "^1.2.2",
-    "electron": "^1.7.11",
-    "electron-builder": "^19.55.3",
+    "electron": "^1.8.2",
+    "electron-builder": "^20.4.1",
     "electron-devtools-installer": "^2.2.3",
     "electron-rebuild": "^1.7.3",
     "enzyme": "^3.3.0",
@@ -200,7 +200,8 @@
     "react-router-redux": "^5.0.0-alpha.6",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
-    "source-map-support": "^0.5.3"
+    "source-map-support": "^0.5.3",
+    "sqlite": "^2.9.1"
   },
   "devEngines": {
     "node": ">=7.x",
