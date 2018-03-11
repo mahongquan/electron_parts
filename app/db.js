@@ -1,6 +1,7 @@
 console.log("load");
 var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database('data.sqlite');
+console.log(sqlite3);
+var db = new sqlite3.Database('./data.sqlite');
 const path = require('path')
 const {shell} = require('electron');
 const fs = require('fs');
@@ -50,6 +51,7 @@ var socket={
         db.serialize(function(){
             var res={};
             db.all("SELECT count(*) as total FROM parts_contact"+where, function(err, row) {
+                console.log("error");
                 res.total=row[0].total;
             });
             db.all("SELECT * FROM parts_contact"+where+" ORDER BY yujifahuo_date DESC limit "+data.limit+" offset "+data.start, function(err, row) {
