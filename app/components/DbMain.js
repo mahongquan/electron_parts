@@ -4,6 +4,8 @@ import styles from './Home.css';
 import {Button, Table,Modal,Navbar,Nav,NavItem,DropdownButton,MenuItem}  from "react-bootstrap";
 import Autosuggest from 'react-autosuggest';
 import {Bar} from "react-chartjs-2";
+import socket from './db';
+//console.log(db);
 var PropTypes = require('prop-types');
 var moment = require('moment');
 var locale=require('moment/locale/zh-cn');

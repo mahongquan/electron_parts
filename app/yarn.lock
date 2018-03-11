@@ -529,18 +529,12 @@ sntp@1.x.x:
   dependencies:
     hoek "2.x.x"
 
-sqlite3@3.1.13:
+sqlite3@^3.1.13:
   version "3.1.13"
   resolved "http://registry.npm.taobao.org/sqlite3/download/sqlite3-3.1.13.tgz#d990a05627392768de6278bafd1a31fdfe907dd9"
   dependencies:
     nan "~2.7.0"
     node-pre-gyp "~0.6.38"
-
-sqlite@^2.9.1:
-  version "2.9.1"
-  resolved "http://registry.npm.taobao.org/sqlite/download/sqlite-2.9.1.tgz#2c85192c15d3e20361236f26240187f9d9f71355"
-  dependencies:
-    sqlite3 "3.1.13"
 
 sshpk@^1.7.0:
   version "1.13.1"

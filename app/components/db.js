@@ -228,5 +228,5 @@ var socket={
     //   console.log(res);
     // });
 //});
-
+export default socket;
 
