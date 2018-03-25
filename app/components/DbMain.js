@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import styles from './Home.css';
 import {Button, Table,Modal,Navbar,Nav,NavItem,DropdownButton,MenuItem}  from "react-bootstrap";
 import Autosuggest from 'react-autosuggest';
@@ -2803,8 +2802,7 @@ export default class App extends React.Component {
   <label id="page">{this.state.start+1}../{this.state.total}</label>{next}
       <input maxLength="6" size="6" onChange={this.handlePageChange} value={this.state.start_input} />
       <button id="page_go"  className="btn btn-info" onClick={this.jump}>跳转</button>
-   <div><Link to="/">go Home</Link></div>
-  </div>
+   </div>
     );
   }
 }
