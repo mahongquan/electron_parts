@@ -1,13 +1,14 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
-import DbMain from './components/DbMain';
+import App from './renderer/entry.jsx';
+// import React from 'react';
+// import { render } from 'react-dom';
+// import { AppContainer } from 'react-hot-loader';
+// import DbMain from './components/DbMain';
 
 
-render(
-  <DbMain></DbMain>,
-  document.getElementById('root')
-);
+// render(
+//   <DbMain></DbMain>,
+//   document.getElementById('root')
+// );
 
 // if (module.hot) {
 //   module.hot.accept('./containers/Root', () => {
