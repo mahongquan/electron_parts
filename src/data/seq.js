@@ -158,13 +158,14 @@ models.sequelize.sync().then(
 			
 			});
 			//route.put('/rest/Contact', async function(ctx,next) {
-			socket.on('/put/Contact', async function( data, callback ) {			
+			socket.on('/put/Contact', async function( data, callback ) {
+				console.log(data);			
 				var contact = await models.Contact.findById(data.id); //.then(function(packitem) {
 				contact.update(data);
 				contact.save();
 				callback({
 					success:true,
-					data: contact,
+					data: contact.dataValues,
 					message: "update  Contact ok"
 				});
 			});
@@ -238,6 +239,32 @@ models.sequelize.sync().then(
 				});
 			}); //delete
 			//route.post('/rest/UsePack', async function(ctx,next) {
+			socket.on('/post/copypack', async function( data, callback ) {				
+				var pack = await models.Pack.findById(data.oldid);
+				var new_pack = await models.Pack.create({name:data.newname});
+				var datas = await models.PackItem.findAll({
+						where: {pack_id:pack.id}
+					})
+				for(var i=0;i<datas.length;i++){
+					console.log(datas[i]);
+					var rec = await models.PackItem.create(
+						{pack_id:new_pack.id
+						,item_id:datas[i].item_id
+						,ct:datas[i].ct
+						,quehuo:datas[i].quehuo}
+					);
+				}
+				// for pi in old.packitem_set.all():
+    //             n=PackItem()
+    //             n.pack=new
+    //             n.item=pi.item
+    //             n.ct=pi.ct
+    //             n.save()
+				callback({
+					data: new_pack.dataValues,
+					message: "copy pack ok"
+				});
+			});
 			socket.on('/post/UsePack', async function( data, callback ) {				
 				var data1={};
 				data1.contact_id=data.contact;

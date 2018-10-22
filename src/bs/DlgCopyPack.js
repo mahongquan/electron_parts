@@ -32,11 +32,11 @@ class DlgCopyPack  extends React.Component{
   copy_pack=()=>{
     console.log(this.src_id+" "+this.state.newname);
     var self=this;
-    var data1=new FormData();
+    var data1={};
     this.setState({stopped:false});
-    data1.append("oldid",this.src_id);
-    data1.append("newname",this.state.newname);
-    Client.postForm("/rest/copypack/",data1,(result) => {
+    data1["oldid"]=this.src_id;
+    data1["newname"]=this.state.newname;
+    Client.post("/rest/copypack/",data1,(result) => {
           self.setState({ error:result.message})
           this.setState({stopped:true});
     });

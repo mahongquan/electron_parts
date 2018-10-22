@@ -7,8 +7,7 @@ const BrowserWindow = electron.BrowserWindow
 //-----------------------------------------------------------------
 
 const {Menu, MenuItem, dialog, ipcMain }=electron;
-
-
+if(process.platform==="linux")  app.disableHardwareAcceleration();
 //是否可以安全退出
 
 let safeExit = false;
@@ -46,6 +45,13 @@ const createWindow = () => {
           label: 'New Window',
           accelerator: 'Ctrl+N',
           click: () =>{createWindow()},
+        },
+         {
+          label: 'DevTools',
+          accelerator: 'Ctrl+D',
+          click: (item, win) =>{
+            win.openDevTools();
+          },
         },
         {
           label: '重启',
